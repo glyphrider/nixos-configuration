@@ -5,11 +5,6 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   nixpkgs.config.allowUnfree = true;
 
   # Pick only one of the below networking options.

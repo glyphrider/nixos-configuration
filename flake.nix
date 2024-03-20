@@ -12,17 +12,20 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.beast = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          ./amd-graphics-drivers.nix
-          ./beast-network.nix
-          ./beast-filesystems.nix
-          ./zfs-grub-configuration.nix
-          ./nfs-mounts.nix
-          ./users-brian.nix
-        ];
+      nixosConfigurations = {
+        beast = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./configuration.nix
+            ./amd-graphics-drivers.nix
+            ./beast-hardware-configuration.nix
+            ./beast-network.nix
+            ./beast-filesystems.nix
+            ./zfs-grub-configuration.nix
+            ./nfs-mounts.nix
+            ./users-brian.nix
+          ];
+        };
       };
     };
 }
