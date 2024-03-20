@@ -21,6 +21,7 @@
           ./beast-filesystems.nix
           ./zfs-grub-configuration.nix
           ./nfs-mounts.nix
+          ./users-brian.nix
         ];
       };
     };
