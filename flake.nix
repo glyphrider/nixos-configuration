@@ -20,7 +20,7 @@
             ./amd-graphics-driver-configuration.nix
             ./beast-hardware-configuration.nix
             ./beast-network-configuration.nix
-            ./beast-filesystems-configuration.nix
+            ./beast-extra-filesystems-configuration.nix
             ./zfs-grub-configuration.nix
             ./nfs-mounts-configuration.nix
             ./users-brian.nix
