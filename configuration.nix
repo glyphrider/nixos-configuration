@@ -68,11 +68,6 @@
 
   services.printing.enable = true;
 
-  services.pcscd.enable = true;
-  services.udev.packages = with pkgs; [
-    yubikey-personalization
-  ];
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
@@ -89,7 +84,10 @@
     pulse.enable = true;
   };
 
-  programs.steam.enable = true;
+  services.pcscd.enable = true;
+  services.udev.packages = with pkgs; [
+    yubikey-personalization
+  ];
 
   programs.gnupg.agent = {
     enable = true;
