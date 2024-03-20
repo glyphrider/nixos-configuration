@@ -17,12 +17,24 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
-            ./amd-graphics-drivers.nix
+            ./amd-graphics-driver-configuration.nix
             ./beast-hardware-configuration.nix
-            ./beast-network.nix
-            ./beast-filesystems.nix
+            ./beast-network-configuration.nix
+            ./beast-filesystems-configuration.nix
             ./zfs-grub-configuration.nix
-            ./nfs-mounts.nix
+            ./nfs-mounts-configuration.nix
+            ./users-brian.nix
+          ];
+        };
+        pango = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./configuration.nix
+            ./amd-graphics-driver-configuration.nix
+            ./pango-hardware-configuration.nix
+            ./pango-network-configuration.nix
+            ./grub-configuration.nix
+            ./nfs-mounts-configuration.nix
             ./users-brian.nix
           ];
         };
