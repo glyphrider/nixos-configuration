@@ -14,27 +14,37 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "zpool/root";
+    { device = "nixos/root";
       fsType = "zfs";
     };
 
   fileSystems."/nix" =
-    { device = "zpool/nix";
+    { device = "nixos/nix";
       fsType = "zfs";
     };
 
   fileSystems."/var" =
-    { device = "zpool/var";
+    { device = "nixos/var";
       fsType = "zfs";
     };
 
   fileSystems."/home" =
-    { device = "zpool/home";
+    { device = "nixos/home";
+      fsType = "zfs";
+    };
+
+  fileSystems."/var/lib/libvirt" =
+    { device = "nixos/libvirt";
+      fsType = "zfs";
+    };
+
+  fileSystems."/var/lib/containers/storage" =
+    { device = "nixos/podman";
       fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1BB2-8A4D";
+    { device = "/dev/disk/by-uuid/5CA2-6445";
       fsType = "vfat";
     };
 

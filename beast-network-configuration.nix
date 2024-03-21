@@ -4,7 +4,7 @@
   networking.hostName = "beast"; # Define your hostname.
   networking.domain = "marisol.home";
 
-  networking.hostId = "d955bd6b";
+  networking.hostId = "50b62111";
 
   networking.networkmanager.enable = false;  # Easiest to use and most distros use this by default.
 
