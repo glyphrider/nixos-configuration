@@ -2,11 +2,20 @@
 
 {
   networking.hostName = "beast"; # Define your hostname.
+  networking.domain = "marisol.home";
+
   networking.hostId = "d955bd6b";
 
   networking.networkmanager.enable = false;  # Easiest to use and most distros use this by default.
 
   networking.useNetworkd = true;
+
+  networking.nameservers = [ "192.168.47.2" ];
+  networking.search = [ "marisol.home" ];
+  networking.defaultGateway = {
+    interface = "br0";
+    address = "192.168.47.1";
+  };
 
   systemd.network = {
     enable = true;
@@ -26,6 +35,8 @@
       };
       "30-br0-ip" = {
         matchConfig.Name = "br0";
+        # address = [ "192.168.47.252/24" ];
+        # routes = [ { routeConfig.Gateway = "192.168.47.1"; } ];
         networkConfig = {
           DHCP = "ipv4";
           IPForward = "yes";
@@ -38,4 +49,6 @@
       };
     };
   };
+
+  services.resolved.enable = true;
 }
