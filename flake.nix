@@ -31,7 +31,7 @@
           modules = [
             ./configuration.nix
             ./amd-graphics-driver-configuration.nix
-            ./pango-hardware-configuration.nix
+            ./hardware-configuration.nix
             ./pango-network-configuration.nix
             ./grub-configuration.nix
             ./nfs-mounts-configuration.nix
