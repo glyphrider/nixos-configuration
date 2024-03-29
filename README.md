@@ -34,4 +34,11 @@ After that, it's time to install!
 nixos-install --flake /mnt/etc/nixos#pango
 ```
 
-This takes a few minute (~10 for me) and then you can just reboot into the new OS.
+This takes a few minutes (~10 for me).
+At the end of the installation you will be asked to set a root password;
+this way, the root password needn't appear in the configuration file.
+The unprivileged user created by the configuration will **not** have an initial password;
+that account will be locked.
+After the reboot, you can login as root and set the password for the unprivileged user.
+
+**NOW**, you can reboot.
