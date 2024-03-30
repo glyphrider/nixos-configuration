@@ -15,9 +15,6 @@
   # Set your time zone.
   time.timeZone = "US/Eastern";
 
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
