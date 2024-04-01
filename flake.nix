@@ -23,6 +23,7 @@
             ./beast-extra-filesystems-configuration.nix
             ./zfs-grub-configuration.nix
             ./nfs-mounts-configuration.nix
+            ./libvirtd-configuration.nix
             ./users-brian.nix
           ];
         };
@@ -35,6 +36,7 @@
             ./pango-network-configuration.nix
             ./grub-configuration.nix
             ./nfs-mounts-configuration.nix
+            ./lxd-configuration.nix
             ./users-brian.nix
           ];
         };
