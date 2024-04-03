@@ -120,12 +120,19 @@
     '';
   };
 
+  services.prometheus.exporters.node = {
+    enable = true;
+    port = 9100;
+    enabledCollectors = [ "systemd" "zfs" ];
+  };
+
   environment.systemPackages = with pkgs; [
     efibootmgr
     gh
     gitFull
     nfs-utils
     pinentry-curses
+    prometheus
     vim
   ];
 
@@ -142,7 +149,10 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 9100 ];
+  };
   # Open ports in the firewall.
   # # Apparently, these are only needed on an NFS server
   # networking.firewall.allowedTCPPorts = [ 111 2049 4000 4001 4002 20084 ];
