@@ -2,7 +2,7 @@
   description = "NixOS 23.11 Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
   };
 

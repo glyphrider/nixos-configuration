@@ -85,7 +85,8 @@
 
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    #pinentryPackage = pkgs.pinentry-curses;
+    pinentryFlavor = "curses";
   };
 
   hardware.gpgSmartcards.enable = true;
